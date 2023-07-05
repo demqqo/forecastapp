@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="src/script.js" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card-body m-3">
+        <div class="row">
+          <div class="col-3 ml-2 main-info">
+            <div class="row emojidegre">
+              <div>
+                <img src="images/partly_cloudy.png" class="emoji-main" />
+              </div>
+              <div class="current-degree">
+                <div class="row main-degree">
+                  <div id="main-degree">24</div>
+                  <div>°</div>
+                  <div class="cf c">
+                    <a class="buttonDegree" id="buttonDegreeC">°C</a>
+                  </div>
+                  <div class="cf">|</div>
+                  <div class="cf f">
+                    <a class="buttonDegree" id="buttonDegreeF">°F</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 search-box">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0 search" id="input">
+                  <input
+                    class="form-control mr-sm-2 search-line pr-300"
+                    type="search"
+                    placeholder="Enter a city"
+                    aria-label="Search"
+                    id="city-input"
+                  />
+                  <button
+                    class="btn btn-outline-success my-2 my-sm-0"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </form>
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0 current-location"
+                  id="current-location"
+                >
+                  📍
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3 today_info pl-5">
+            <div class="city" id="city">
+              Toronto
+              <br />
+            </div>
+            <spam class="real_time" id="real-time"></spam>
+            <br />
+            <spam class="day_near_today_info" id="current-day"> </spam>
+            <br />
+            <br />
+
+            <div class="weather" id="weather">Partly cloudy</div>
+            <br />
+            <div>
+              <ul class="more_info">
+                <li>Precipitation: <spam id="precipitation">0</spam>%</li>
+                <li>
+                  Humidity:
+                  <spam id="humidity">36</spam>%
+                </li>
+                <li>Wind: <spam id="wind">16</spam> km/h</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-3">
+            <div class="another-days-group-of-3">
+              <div class="another-days-buttons-3">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Sun</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly_cloudy.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">27° 17°</div>
+                </button>
+              </div>
+              <div class="another-days-buttons-3">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Mon</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/rain.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">20° 16°</div>
+                </button>
+              </div>
+              <div class="another-days-buttons-3">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Tue</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/complitely-rain.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">18° 12°</div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="another-days-group-of-3">
+              <div class="another-days-buttons-6">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Wed</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly-rain.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">18° 12°</div>
+                </button>
+              </div>
+              <div class="another-days-buttons-6">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Thu</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly-rain.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">21° 14°</div>
+                </button>
+              </div>
+              <div class="another-days-buttons-6">
+                <button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Fri</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly-rain.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">19° 12°</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-3">
+        <a href="https://github.com/demqqo/weatherapp." target="_blank"
+          >Open source code</a
+        >
+        <spam> by Ksenia Oliynyk</spam>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

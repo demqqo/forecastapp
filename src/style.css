@@ -1,0 +1,144 @@
+.fa-sun {
+  font-size: 80px;
+  color: yellow;
+  display: block;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+.form {
+  display: block;
+  margin-left: 0 auto;
+}
+.fa-solid {
+  color: grey;
+}
+.current-degree {
+  margin-left: 20px;
+  font-size: 45px;
+}
+.cf {
+  font-size: 14px;
+  display: block;
+  padding: 11px 0 11px 0;
+  color: black;
+}
+.buttonDegree {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.c {
+  color: blue;
+}
+
+.search {
+  padding: 10px 10px;
+  margin: 16px auto;
+}
+
+.main-info {
+  display: block;
+}
+
+.navbar {
+  display: block;
+
+  padding: 10px;
+}
+.emoji-main {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+.container {
+  resize: unset;
+}
+.search-box {
+  padding-right: 0;
+  margin-right: -15px;
+}
+.search-line {
+  padding: 6px 15px 6px 10px;
+}
+.main-degree {
+  margin: 15px 0 15px 0;
+}
+
+.search {
+  padding: 10px 25px 10px 25px;
+  margin: unset;
+}
+.search123 {
+  padding: 6px 20px;
+}
+
+.form-control {
+  padding: 6px 300px 6px 10px;
+  text-align: left;
+}
+
+.current-location {
+  font-size: 22px;
+  margin-left: 6px;
+  padding: 0 7.573px 0 7.573px;
+  border: solid green 1px;
+  border-radius: 25px;
+  background-color: #f8f9fa;
+}
+.current-location:hover {
+  background-color: #28a745;
+}
+.more_info {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+}
+.city {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 25px;
+}
+.weather {
+  font-style: italic;
+  font-size: 25px;
+}
+.today_info {
+  display: block;
+  margin-top: 40px;
+  border-right: black solid 1px;
+}
+.day_near_today_info {
+  font-size: 20px;
+  font-weight: light;
+}
+.real_time {
+  font-size: 25px;
+  font-weight: light;
+}
+.another-days-buttons-3 {
+  text-align: right;
+  margin: 0 auto;
+}
+.another-days-buttons-6 {
+  text-align: left;
+  margin: 0 auto;
+}
+.another-days-group-of-3 {
+  display: block;
+  margin-top: 45px;
+}
+.day-buttons {
+  border: white solid 0px;
+  padding: 5px 23.525px 5px 23.525px;
+  border-radius: 50px;
+  margin: 10px 30px auto;
+}
+
+.img-inside-of-button-another-days {
+  width: 40px;
+}
