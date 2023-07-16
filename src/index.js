@@ -2,7 +2,6 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function showTemperatureAndData(response) {
-  console.log(response.data.name);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let weatherDescription = document.querySelector("#weather");
@@ -15,17 +14,28 @@ function showTemperatureAndData(response) {
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   let precipitation = document.querySelector("#precipitation");
-  /*console.log(response.data);
-  console.log(`${response.data.main.humidity} humidity`);
-  console.log(`${Math.round(response.data.main.temp)} temp`);
-  console.log(`${response.data.wind.speed} wind speed`);
-  console.log(`${response.data.weather[0].description} description`);*/
   if (response.data.rain) {
-    //console.log(`${response.data.rain["1h"] * 100} rain`);
     precipitation.innerHTML = response.data.rain["1h"] * 100;
   } else {
     precipitation.innerHTML = "0";
   }
+  let now = new Date(response.data.dt);
+  let time = document.querySelector("#real-time");
+  let hour = now.getHours();
+  let minutes = now.getMinutes();
+  time.innerHTML = `${pad(hour, 2)}:${pad(minutes, 2)}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednsday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let weekDay = days[now.getDay()];
+  let currentDay = document.querySelector("#current-day");
+  currentDay.innerHTML = weekDay;
 }
 function showPosition(position) {
   lat = position.coords.latitude;
