@@ -2,6 +2,12 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function showTemperatureAndData(response) {
+  console.log(response.data.weather["0"].icon);
+
+  $("#img").attr(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather["0"].icon}@2x.png`
+  );
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
   let weatherDescription = document.querySelector("#weather");
