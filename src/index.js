@@ -2,8 +2,6 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function showTemperatureAndData(response) {
-  console.log(response.data);
-
   $("#img").attr(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather["0"].icon}@2x.png`
@@ -25,7 +23,8 @@ function showTemperatureAndData(response) {
   } else {
     precipitation.innerHTML = "0";
   }
-  let now = new Date(response.data.dt);
+  let now = new Date(response.data.dt * 1000);
+
   let time = document.querySelector("#real-time");
   let hour = now.getHours();
   let minutes = now.getMinutes();
