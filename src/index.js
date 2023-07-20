@@ -2,7 +2,7 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function showTemperatureAndData(response) {
-  console.log(response.data.weather["0"].icon);
+  console.log(response.data);
 
   $("#img").attr(
     "src",
