@@ -19,7 +19,8 @@ function showTemperatureAndData(response) {
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   let precipitation = document.querySelector("#precipitation");
   if (response.data.rain) {
-    precipitation.innerHTML = response.data.rain["1h"] * 100;
+    let percentofrain = Math.round(response.data.rain["1h"] * 100);
+    precipitation.innerHTML = percentofrain;
   } else {
     precipitation.innerHTML = "0";
   }
