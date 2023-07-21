@@ -44,7 +44,6 @@ function showTemperatureAndData(response) {
   currentDay.innerHTML = weekDay;
 
   displayForecast();
-  displayForecast4_6();
 }
 function showPosition(position) {
   lat = position.coords.latitude;
@@ -118,13 +117,55 @@ function showCity(event) {
   }
 }
 function displayForecast() {
-  for (let i = 1; i < 7; i++) {
+  let today = document.getElementById("current-day").innerHTML;
+  console.log(today);
+  let fulldays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednsday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  /*let days_for_loop = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let dayss = [];
+  for (let o = 0; 0 > 7; ) {
+    if ((today = fulldays[o])) {
+      for (let x = 0; x < 7; x++) {
+        dayss[x] = days_for_loop[o];
+      }
+    }
+  }*/
+
+  let days_for_loop = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [];
+  let y;
+  for (let o = 0; o < 7; ) {
+    if (today == fulldays[o]) {
+      o++;
+
+      for (let x = 0; x < 6; x++) {
+        if (o == 7) {
+          o = 0;
+        }
+
+        days.push(days_for_loop[o]);
+        o++;
+      }
+      o = +8;
+    }
+
+    o++;
+  }
+
+  for (let i = 0; i < 6; i++) {
     let forecastElement = document.querySelector(`#forecast${i}`);
 
     let forecastHTML;
 
     forecastHTML = `<button class="day-buttons">
-                  <div class="day-inside-of-button-another-days">Sun</div>
+                  <div class="day-inside-of-button-another-days">${days[i]}</div>
                   <img
                     class="img-inside-of-button-another-days"
                     src="images/partly_cloudy.png"
@@ -138,21 +179,6 @@ function displayForecast() {
   }
 }
 
-/*
-function displayForecast4_6() {
-  let forecastElement = document.querySelector("#forecast4");
-  let forecastHTML;
-  forecastHTML = `<button class="day-buttons">
-  <div class="day-inside-of-button-another-days">Wed</div>
-  <img class="img-inside-of-button-another-days" src="images/partly-rain.png" />
-  <div class="temp-inside-of-button-another-days">
-    18° <spam class="min_temp_button">12°</spam>
-  </div>
-</button>`;
-
-  forecastElement.innerHTML = forecastHTML;
-}
-*/
 let now = new Date();
 let time = document.querySelector("#real-time");
 let hour = now.getHours();
