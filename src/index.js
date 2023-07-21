@@ -42,6 +42,9 @@ function showTemperatureAndData(response) {
   let weekDay = days[now.getDay()];
   let currentDay = document.querySelector("#current-day");
   currentDay.innerHTML = weekDay;
+
+  displayForecast();
+  displayForecast4_6();
 }
 function showPosition(position) {
   lat = position.coords.latitude;
@@ -114,7 +117,42 @@ function showCity(event) {
       .then(getLocationOfCity);
   }
 }
+function displayForecast() {
+  for (let i = 1; i < 7; i++) {
+    let forecastElement = document.querySelector(`#forecast${i}`);
 
+    let forecastHTML;
+
+    forecastHTML = `<button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">Sun</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly_cloudy.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">
+                    27° <spam class="min_temp_button">17°</spam>
+                  </div>
+                </button>`;
+
+    forecastElement.innerHTML = forecastHTML;
+  }
+}
+
+/*
+function displayForecast4_6() {
+  let forecastElement = document.querySelector("#forecast4");
+  let forecastHTML;
+  forecastHTML = `<button class="day-buttons">
+  <div class="day-inside-of-button-another-days">Wed</div>
+  <img class="img-inside-of-button-another-days" src="images/partly-rain.png" />
+  <div class="temp-inside-of-button-another-days">
+    18° <spam class="min_temp_button">12°</spam>
+  </div>
+</button>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+*/
 let now = new Date();
 let time = document.querySelector("#real-time");
 let hour = now.getHours();
