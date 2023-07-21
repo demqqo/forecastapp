@@ -142,3 +142,7 @@
 .img-inside-of-button-another-days {
   width: 40px;
 }
+
+.min_temp_button {
+  color: grey;
+}
