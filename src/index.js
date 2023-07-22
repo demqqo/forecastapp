@@ -128,24 +128,15 @@ function displayForecast() {
     "Friday",
     "Saturday",
   ];
-  /*let days_for_loop = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let dayss = [];
-  for (let o = 0; 0 > 7; ) {
-    if ((today = fulldays[o])) {
-      for (let x = 0; x < 7; x++) {
-        dayss[x] = days_for_loop[o];
-      }
-    }
-  }*/
 
   let days_for_loop = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let days = [];
-  let y;
-  for (let o = 0; o < 7; ) {
+
+  for (let o = 0; o < 8; ) {
     if (today == fulldays[o]) {
       o++;
 
-      for (let x = 0; x < 6; x++) {
+      for (let x = 0; x < 7; x++) {
         if (o == 7) {
           o = 0;
         }
@@ -159,9 +150,8 @@ function displayForecast() {
     o++;
   }
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 5; i++) {
     let forecastElement = document.querySelector(`#forecast${i}`);
-
     let forecastHTML;
 
     forecastHTML = `<button class="day-buttons">
@@ -177,6 +167,27 @@ function displayForecast() {
 
     forecastElement.innerHTML = forecastHTML;
   }
+  let todayForecast = document.querySelector("#forecast");
+
+  todayForecast.innerHTML = `<button class="day-buttons">
+                  <div class="day-inside-of-button-another-days">${days[6]}</div>
+                  <img
+                    class="img-inside-of-button-another-days"
+                    src="images/partly_cloudy.png"
+                  />
+                  <div class="temp-inside-of-button-another-days">
+                    27° <spam class="min_temp_button">17°</spam>
+                  </div>
+                </button>`;
+}
+function getForecast(cordinates) {
+  let apiKey = "83e448c2e1b20e8f79a4407296ad6e49";
+
+  let apiURL = `api.openweathermap.org/data/2.5/forecast?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+}
+function showForecast(response) {
+  console.log(response);
 }
 
 let now = new Date();
