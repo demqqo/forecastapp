@@ -44,6 +44,7 @@ function showTemperatureAndData(response) {
   currentDay.innerHTML = weekDay;
 
   displayForecast();
+  getForecast(response.data.coord);
 }
 function showPosition(position) {
   lat = position.coords.latitude;
@@ -118,7 +119,7 @@ function showCity(event) {
 }
 function displayForecast() {
   let today = document.getElementById("current-day").innerHTML;
-  console.log(today);
+
   let fulldays = [
     "Sunday",
     "Monday",
@@ -183,11 +184,33 @@ function displayForecast() {
 function getForecast(cordinates) {
   let apiKey = "83e448c2e1b20e8f79a4407296ad6e49";
 
-  let apiURL = `api.openweathermap.org/data/2.5/forecast?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiURL);
+  axios.get(apiURL).then(showForecast);
 }
 function showForecast(response) {
-  console.log(response);
+  //console.log(response.data.list["0"].dt * 1000);
+  /*for (let i = 0; i < 40; i++) {
+    console.log(response.data.list[i].main.temp_max);
+  }*/
+  let allTempMax = [];
+  let allTempMin = [];
+  let y = 0;
+  for (let x = 0; x < 5; x++) {
+    let temporaryTemp = [];
+    let temporaryTemp1 = [];
+    for (let o = 0; o < 8; o++) {
+      //console.log(response.data.list[y].main.temp_max);
+      temporaryTemp.push(response.data.list[y].main.temp_max);
+      temporaryTemp1.push(response.data.list[y].main.temp_min);
+      //allTempMax.push(temporaryTemp);
+      y++;
+    }
+    allTempMin.push(Math.min(...temporaryTemp1));
+    allTempMax.push(Math.max(...temporaryTemp));
+  }
+  console.log(allTempMax);
+  console.log(allTempMin);
 }
 
 let now = new Date();
