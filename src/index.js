@@ -156,7 +156,6 @@ function showForecast(response) {
     for (let o = 0; o < 8; o++) {
       temporaryTemp.push(response.data.list[y].main.temp_max);
       temporaryTemp1.push(response.data.list[y].main.temp_min);
-      console.log(response.data.list[y].weather);
       y++;
     }
 
