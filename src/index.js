@@ -197,23 +197,29 @@ function showForecast(response) {
 
     o++;
   }
+  let img;
+  for (let y = 4; y < 40; ) {
+    img = `"https://openweathermap.org/img/wn/${response.data.list[y].weather["0"].icon}@2x.png"`;
+    //img = `https://openweathermap.org/img/wn/04n@2x.png`;
+    console.log(img);
+    for (let i = 0; i < 5; i++) {
+      let forecastElement = document.querySelector(`#forecast${i}`);
+      let forecastHTML;
 
-  for (let i = 0; i < 5; i++) {
-    let forecastElement = document.querySelector(`#forecast${i}`);
-    let forecastHTML;
-
-    forecastHTML = `<button class="day-buttons">
+      forecastHTML = `<button class="day-buttons">
                   <div class="day-inside-of-button-another-days">${days[i]}</div>
                   <img
                     class="img-inside-of-button-another-days"
-                    src="images/partly_cloudy.png"
+                    src=${img}
                   />
                   <div class="temp-inside-of-button-another-days"><spam class="max_temp_button">${allTempMax[i]}° </spam>
                    <spam class="min_temp_button">${allTempMin[i]}°</spam>
                   </div>
                 </button>`;
 
-    forecastElement.innerHTML = forecastHTML;
+      forecastElement.innerHTML = forecastHTML;
+    }
+    y = y + 8;
   }
 }
 
