@@ -84,15 +84,13 @@
 
 .current-location {
   font-size: 22px;
-  margin-left: 6px;
+  margin-left: -2px;
   padding: 0 7.573px 0 7.573px;
-  border: solid green 1px;
+
   border-radius: 25px;
   background-color: #f8f9fa;
 }
-.current-location:hover {
-  background-color: #28a745;
-}
+
 .more_info {
   list-style: none;
   padding: 0;
@@ -124,25 +122,37 @@
   text-align: right;
   margin: 0 auto;
 }
+
 .another-days-buttons-6 {
   text-align: left;
   margin: 0 auto;
+  color: rgb(215, 164, 164);
 }
 .another-days-group-of-3 {
   display: block;
   margin-top: 45px;
 }
 .day-buttons {
-  border: white solid 0px;
+  border-color: rgb(187, 220, 238) solid 0px;
   padding: 5px 23.525px 5px 23.525px;
   border-radius: 50px;
   margin: 10px 30px auto;
+  background-color: lightblue;
+}
+.another-days-group-of-3:hover {
+  box-shadow: grey solid 4px;
 }
 
 .img-inside-of-button-another-days {
-  width: 40px;
+  width: 70px;
 }
 
 .min_temp_button {
   color: grey;
+}
+.card-body {
+  background-color: lightblue;
+}
+.navbar {
+  background-color: rgb(141, 210, 233);
 }
