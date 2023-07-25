@@ -49,7 +49,7 @@ function showTemperatureAndData(response) {
   let todayForecast = document.querySelector("#forecast");
   let minTemp = Math.round(response.data.main.temp_min);
   let maxTemp = Math.round(response.data.main.temp_max);
-  todayForecast.innerHTML = `<button class="day-buttons">
+  todayForecast.innerHTML = `<button class="btn btn-default day-buttons">
                   <div class="day-inside-of-button-another-days">${days[
                     now.getDay()
                   ].substring(0, 3)}</div>
@@ -205,7 +205,7 @@ function showForecast(response) {
       let forecastElement = document.querySelector(`#forecast${i}`);
       let forecastHTML;
 
-      forecastHTML = `<button class="day-buttons">
+      forecastHTML = `<button class="btn btn-default day-buttons ">
                   <div class="day-inside-of-button-another-days">${days[i]}</div>
                   <img
                     class="img-inside-of-button-another-days"
