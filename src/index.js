@@ -96,6 +96,7 @@ function stopEventForC(event) {
   event.preventDefault();
   let buttonC = document.querySelector("#buttonDegreeC");
   let buttonF = document.querySelector("#buttonDegreeF");
+
   buttonC.style.color = "blue";
 
   buttonF.style.color = "black";
@@ -113,7 +114,6 @@ function stopEventForF(event) {
   let buttonC = document.querySelector("#buttonDegreeC");
   let buttonF = document.querySelector("#buttonDegreeF");
   buttonF.style.color = "blue";
-
   buttonC.style.color = "black";
   buttonC.style.textDecoration = "none";
   let mainDegree = document.querySelector("#main-degree");
@@ -191,6 +191,7 @@ function showForecast(response) {
         days.push(days_for_loop[o]);
         o++;
       }
+
       o = +8;
     }
 
