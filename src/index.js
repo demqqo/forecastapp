@@ -60,8 +60,8 @@ function showTemperatureAndData(response) {
                     }@2x.png"
                   />
                   
-                  <div class="temp-inside-of-button-another-days"><spam class="max_temp_button">${maxTemp}° </spam>
-                   <spam class="min_temp_button">${minTemp}°</spam>
+                  <div class="temp-inside-of-button-another-days"><span class="max_temp_button">${maxTemp}° </span>
+                   <span class="min_temp_button">${minTemp}°</span>
                   </div>
                 </button>`;
   getForecast(response.data.coord);
@@ -199,27 +199,24 @@ function showForecast(response) {
   }
   let img;
   for (let y = 4; y < 40; ) {
-    img = `"https://openweathermap.org/img/wn/${response.data.list[y].weather["0"].icon}@2x.png"`;
-    //img = `https://openweathermap.org/img/wn/04n@2x.png`;
-    console.log(img);
     for (let i = 0; i < 5; i++) {
+      img = `"https://openweathermap.org/img/wn/${response.data.list[y].weather[0].icon}@2x.png"`;
       let forecastElement = document.querySelector(`#forecast${i}`);
       let forecastHTML;
-
+      console.log(img);
       forecastHTML = `<button class="btn btn-default day-buttons ">
                   <div class="day-inside-of-button-another-days">${days[i]}</div>
                   <img
                     class="img-inside-of-button-another-days"
                     src=${img}
                   />
-                  <div class="temp-inside-of-button-another-days"><spam class="max_temp_button">${allTempMax[i]}° </spam>
-                   <spam class="min_temp_button">${allTempMin[i]}°</spam>
+                  <div class="temp-inside-of-button-another-days"><span class="max_temp_button">${allTempMax[i]}° </span>
+                   <span class="min_temp_button">${allTempMin[i]}°</span>
                   </div>
                 </button>`;
-
       forecastElement.innerHTML = forecastHTML;
+      y = y + 8;
     }
-    y = y + 8;
   }
 }
 
