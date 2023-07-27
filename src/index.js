@@ -203,7 +203,7 @@ function showForecast(response) {
       img = `"https://openweathermap.org/img/wn/${response.data.list[y].weather[0].icon}@2x.png"`;
       let forecastElement = document.querySelector(`#forecast${i}`);
       let forecastHTML;
-      console.log(img);
+
       forecastHTML = `<button class="btn btn-default day-buttons ">
                   <div class="day-inside-of-button-another-days">${days[i]}</div>
                   <img
